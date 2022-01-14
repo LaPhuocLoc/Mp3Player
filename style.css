@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Yuji+Syuku&display=swap');
 
 :root {
-    --primary-color: rgb(236, 31, 85);
-    --secondary-color: rgba(236, 31, 85, 0.4);
+    --primary-color: #ec1f55;
     --text-color: #333;
+    --gradient-primary-color: linear-gradient(to top right, #f77062 0%, #fe5196 100%);
+    --gradient-bg-color: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+
 }
 
 * {
@@ -13,12 +15,13 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
 }
 
 html {
     box-sizing: border-box;
     font-family: 'Noto Sans JP', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .player {
@@ -41,14 +44,39 @@ html {
 
 .dashboard {
     padding: 16px 16px 14px;
-    background-color: #fff;
+    background-image: var(--gradient-bg-color);
     position: fixed;
     top: 0;
     width: 100%;
     max-width: 480px;
     border-bottom: 1px solid #ebebeb;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+.dashboard .up-arrow {
+    display: none;
+}
+.dashboard.active .up-arrow {
+    display: inline-block;
+}
+.dashboard.active .down-arrow {
+    display: none
+}
+.dashboard.active {
+    top: unset;
+    bottom: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+.dashboard.active .btn.btn-add,
+.dashboard.active .btn.btn-down {
+    top: 6px;
 }
 
+.dashboard.active header h4,
+.dashboard.active header h2,
+.dashboard.active .cd-inner,
+.dashboard.active .progress {
+    display: none;
+}
 
 
 /* HEADER */
@@ -58,31 +86,49 @@ header {
 }
 
 header h4 {
-    color: var(--primary-color);
+    background-image: var(--gradient-primary-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 12px;
 }
 
 header h2 {
     /* color: var(--text-color); */
-    font-size: 1.5rem;
-    color: #fff;
-    text-shadow: -1px -1px 0 rgba(51, 51, 51, 1),
-        1px -1px 0 rgba(51, 51, 51, 1),
-        -1px 1px 0 rgba(51, 51, 51, 1),
-        1px 1px 0 rgba(51, 51, 51, 1),
-        0 0 7px var(--primary-color);
+    font-family: 'Yuji Syuku', serif;
+    font-size: 2rem;
+    color: #333;
 }
 
+header .btn.btn-down, header .btn.btn-add {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-image: var(--gradient-primary-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+header .btn.btn-add {
+    left: unset;
+    right: 16px;
+}
 
 
 /* CD */
 .cd-inner {
     background: url(./Yoasobi/img/soundwave.png) no-repeat center/contain;
     z-index: -1;
+    margin-bottom: 10px;
 }
+
 .cd-inner.active {
     animation: soundBeats 1.2s infinite;
 }
+
 .cd {
     display: flex;
     margin: auto;
@@ -105,7 +151,7 @@ header h2 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 18px 0 8px 0;
+    padding: 8px 0 8px 0;
 }
 
 .control .btn {
@@ -127,7 +173,10 @@ header h2 {
 }
 
 .control .btn.active {
-    color: var(--primary-color);
+    background-image: var(--gradient-primary-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .control .btn-toggle-play {
@@ -139,14 +188,15 @@ header h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
-    box-shadow: 0px 0px 1px 1px var(--secondary-color), 0px 0px 2px 2px var(--secondary-color);
+    /* background-color: var(--primary-color); */
+    background-image: var(--gradient-primary-color);
+    /* box-shadow: 0px 0px 1px 1px var(--secondary-color), 0px 0px 2px 2px var(--secondary-color); */
 }
 
 .control .btn-toggle-play:hover {
-    background-color: var(--primary-color);
-}
+    background-image: var(--gradient-primary-color);
 
+}
 
 .progress {
     position: relative;
@@ -161,7 +211,7 @@ header h2 {
     cursor: pointer;
 }
 
-.progress::before {
+/* .progress::before {
     content: '';
     position: absolute;
     height: 6px;
@@ -171,7 +221,7 @@ header h2 {
     background: url(./Yoasobi/img/soundwave.png) no-repeat center/cover;
     overflow: hidden;
     z-index: -1;
-}
+} */
 
 .progress::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -179,7 +229,7 @@ header h2 {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-image: var(--gradient-primary-color);
     cursor: pointer;
 }
 
@@ -193,7 +243,7 @@ header h2 {
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-    background-color: #fff;
+    background-image: var(--gradient-bg-color);
     padding: 8px 16px;
     border-radius: 5px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
@@ -201,7 +251,7 @@ header h2 {
 }
 
 .song.active {
-    background-color: var(--primary-color);
+    background-image: var(--gradient-primary-color);
 }
 
 .song:active {
@@ -250,19 +300,23 @@ header h2 {
     0% {
         transform: rotate(0deg) scale(1);
     }
-    
+
     25% {
         transform: rotate(0deg) scale(1.02);
     }
+
     45% {
         transform: rotate(0deg) scale(1);
     }
+
     50% {
         transform: rotate(0deg) scale(1.02);
     }
+
     70% {
         transform: rotate(0deg) scale(1);
     }
+
     75% {
         transform: rotate(0deg) scale(1.02);
     }
@@ -270,5 +324,5 @@ header h2 {
     95% {
         transform: rotate(0deg) scale(1);
     }
-    
+
 }

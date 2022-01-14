@@ -26,8 +26,10 @@ const nextBtn = $('.btn.btn-next')
 const prevBtn = $('.btn.btn-prev')
 const randomBtn = $('.btn.btn-random')
 const repeatBtn = $('.btn.btn-repeat')
+const addBtn = $('.btn.btn-add')
 const progress = $('#progress')
 const cdInner = $('.cd-inner')
+
 
 const app = {
     currentIndex: 0,
