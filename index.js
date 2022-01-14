@@ -44,55 +44,55 @@ const app = {
         {
             name: "夜に駆ける",
             singer: "Yoasobi",
-            path: "./Yoasobi/audio/Yoru-ni-kakeru.m4a",
+            path: "./Yoasobi/audio/Yoru-ni-kakeru.mp3",
             image: "./Yoasobi/img/Yoru-ni-kakeru.jpg"
         },
         {
             name: "アンコール",
             singer: "Yoasobi",
-            path: "./Yoasobi/audio/Ankoru.m4a",
+            path: "./Yoasobi/audio/Ankoru.mp3",
             image: "./Yoasobi/img/Ankoru.jpg"
         },
         {
             name: "あの夢をなぞって",
             singer: "Yoasobi",
-            path: "./Yoasobi/audio/Ano-yume-wo-nazotte.m4a",
+            path: "./Yoasobi/audio/Ano-yume-wo-nazotte.mp3",
             image: "./Yoasobi/img/Ano-yume-wo-nazotte.jpg"
         },
         {
             name: "群青",
             singer: "Yoasobi",
-            path: "./Yoasobi/audio/Gunjou.m4a",
+            path: "./Yoasobi/audio/Gunjou.mp3",
             image: "./Yoasobi/img/Gunjou.jpg"
         },
         {
             name: "ハルジオン",
             singer: "Yoasobi",
-            path: "./Yoasobi/audio/Harujion.m4a",
+            path: "./Yoasobi/audio/Harujion.mp3",
             image: "./Yoasobi/img/Harujion.jpg"
         },
         {
             name: "怪物",
             singer: "Yoasobi",
-            path: "./Yoasobi/audio/Kaibutsu.m4a",
+            path: "./Yoasobi/audio/Kaibutsu.mp3",
             image: "./Yoasobi/img/Kaibutsu.jpg"
         },
         {
             name: "もしも命が描けたら",
             singer: "Yoasobi",
-            path: "./Yoasobi/audio/Moshimo-inochiga-egaketara.m4a",
+            path: "./Yoasobi/audio/Moshimo-inochiga-egaketara.mp3",
             image: "./Yoasobi/img/Moshimo-inochiga-egaketara.jpg"
         },
         {
             name: "三原色",
             singer: "Yoasobi",
-            path: "./Yoasobi/audio/Sangenshoku.m4a",
+            path: "./Yoasobi/audio/Sangenshoku.mp3",
             image: "./Yoasobi/img/Sangenshoku.jpg"
         },
         {
             name: "ツバメ",
             singer: "Yoasobi",
-            path: "./Yoasobi/audio/Tsubame.m4a",
+            path: "./Yoasobi/audio/Tsubame.mp3",
             image: "./Yoasobi/img/Tsubame.jpg"
         }
     ],
