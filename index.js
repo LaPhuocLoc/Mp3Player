@@ -38,7 +38,7 @@ const app = {
         {
             name: "たぶん",
             singer: "Yoasobi",
-            path: "./Yoasobi/audio/Tabun.mp3",
+            path: "./Yoasobi/audio/Tabun.m4a",
             image: "./Yoasobi/img/Tabun.jpg"
         },
         {
