@@ -52,20 +52,25 @@ html {
     border-bottom: 1px solid #ebebeb;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
+
 .dashboard .up-arrow {
     display: none;
 }
+
 .dashboard.active .up-arrow {
     display: inline-block;
 }
+
 .dashboard.active .down-arrow {
     display: none
 }
+
 .dashboard.active {
     top: unset;
     bottom: 0;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .dashboard.active .btn.btn-add,
 .dashboard.active .btn.btn-down {
     top: 6px;
@@ -250,8 +255,17 @@ header .btn.btn-add {
     cursor: pointer;
 }
 
+.song .spectrum div {
+    display: none;
+}
+
 .song.active {
+    position: relative;
     background-image: var(--gradient-primary-color);
+}
+
+.song.active .spectrum div {
+    display: block;
 }
 
 .song:active {
@@ -325,4 +339,110 @@ header .btn.btn-add {
         transform: rotate(0deg) scale(1);
     }
 
+}
+
+/* Spectrum */
+.spectrum {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 80px;
+}
+.spectrum div, .spectrum div:before, .spectrum div:after {
+    width: 9px;
+    height: 3px;
+    background: #57C7DB;
+    position: relative;
+    transform: translate(-11px, 5px);
+    box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2, 0 -9px 0 #B8E3EA, 0 -12px 0 #CAECF1;
+    animation-name: bar1;
+    animation-duration: 0.3s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.spectrum div:before {
+    content: '';
+    position: absolute;
+    transform: translate(11px, 0);
+    box-shadow: 0 -3px 0 #57C7DB;
+    animation-name: bar2;
+}
+
+.spectrum div:after {
+    content: '';
+    position: absolute;
+    transform: translate(22px, 0);
+    box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2, 0 -9px 0 #B8E3EA;
+    animation-name: bar3;
+}
+.spectrum.active div, .spectrum.active div:before, .spectrum.active div:after {
+    animation-play-state: running;
+}
+@keyframes bar1 {
+    0%, 19.9% {
+        box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2, 0 -9px 0 #B8E3EA, 0 -12px 0 #CAECF1;
+    }
+
+    20%, 39.9% {
+        box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2, 0 -9px 0 #B8E3EA;
+    }
+
+    40%, 59.9% {
+        box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2;
+    }
+
+    60%, 79.9% {
+        box-shadow: 0 -3px 0 #57C7DB;
+    }
+
+    80%, 100% {
+        box-shadow: none;
+    }
+}
+
+@keyframes bar2 {
+    0%, 19.9% {
+        box-shadow: none;
+    }
+
+    20%, 39.9% {
+        box-shadow: 0 -3px 0 #57C7DB;
+    }
+
+    40%, 59.9% {
+        box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2;
+    }
+
+    60%, 79.9% {
+        box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2, 0 -9px 0 #B8E3EA, 0 -12px 0 #CAECF1;
+    }
+
+    80%, 100% {
+        box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2, 0 -9px 0 #B8E3EA;
+    }
+}
+
+@keyframes bar3 {
+    0%, 19.9% {
+        box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2;
+    }
+
+    20%, 39.9% {
+        box-shadow: 0 -3px 0 #57C7DB;
+    }
+
+    40%, 59.9% {
+        box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2;
+    }
+
+    60%, 79.9% {
+        box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2, 0 -9px 0 #B8E3EA;
+    }
+
+    80%, 100% {
+        box-shadow: 0 -3px 0 #57C7DB, 0 -6px 0 #90D6E2, 0 -9px 0 #B8E3EA, 0 -12px 0 #CAECF1;
+    }
 }

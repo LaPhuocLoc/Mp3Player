@@ -138,6 +138,7 @@ const app = {
             _this.isPlaying = true
             player.classList.add('playing')
             cdInner.classList.add('active')
+            $('.spectrum').classList.add('active')
             cdRotate360.play()
         }
         // Khi song bị pause
@@ -145,6 +146,7 @@ const app = {
             _this.isPlaying = false
             player.classList.remove('playing')
             cdInner.classList.remove('active')
+            $('.spectrum').classList.remove('active')
             cdRotate360.pause()
         }
         // Tiến độ bài hát thay đổi
@@ -223,6 +225,9 @@ const app = {
                 </div>
                 <div class="option">
                     <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <div class="spectrum">
+                    <div></div>
                 </div>
             </div>
             `
