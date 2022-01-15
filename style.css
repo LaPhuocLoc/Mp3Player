@@ -51,6 +51,7 @@ html {
     max-width: 480px;
     border-bottom: 1px solid #ebebeb;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 .dashboard .up-arrow {
@@ -380,6 +381,10 @@ header .btn.btn-add {
 }
 .spectrum.active div, .spectrum.active div:before, .spectrum.active div:after {
     animation-play-state: running;
+}
+.spectrum.paused div, .spectrum.paused div:before, .spectrum.paused div:after {
+    animation: none;
+    box-shadow: 0 -3px 0 #57c7db;
 }
 @keyframes bar1 {
     0%, 19.9% {
