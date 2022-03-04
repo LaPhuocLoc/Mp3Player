@@ -1,2 +1,2 @@
 # Mp3Player
-HTMLやCSSやJavascriptで音楽プレイヤーを作りました
+技術：ＨＴＭＬ，ＣＳＳ，ＪＡＶＡＳＣＲＩＰＴ
